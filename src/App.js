@@ -77,10 +77,11 @@ getJoke = () => {
    console.log('Hello from the RENDER method');
  return (
    <div className="App">
-     <h1>Chuckin' Norris</h1>
+     <h1>Chuckin'Norris</h1>
      <p>test test</p>
      <p>{this.state.jokeTime}</p>
      <button onClick={this.getJoke}></button>
+     <p>change test</p>
      
    </div>
   );
