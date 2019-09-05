@@ -16,24 +16,24 @@ class App extends Component {
  componentDidMount(){
    console.log('Hello from COMPONENT DID MOUNT');
    //making an API call with axios
-   axios({
-     method: 'get',
-     url: 'http://api.icndb.com/jokes/random?escape=javascript',
-     responseType: 'json'
-   }).then((res) => {
-     console.log (res)
+  //  axios({
+  //    method: 'get',
+  //    url: 'http://api.icndb.com/jokes/random?escape=javascript',
+  //    responseType: 'json'
+  //  }).then((res) => {
+  //    console.log (res)
 
-     this.setState({
-       jokeArray: res.data.value,
-       jokeTime: res.data.value.joke
+  //    this.setState({
+  //      jokeArray: res.data.value,
+  //      jokeTime: res.data.value.joke
 
 
-      //  jokeName: res.dajokeObjects[0].title
-     });
+  //     //  jokeName: res.dajokeObjects[0].title
+  //    });
 
-     console.log(res.data.value)
-     console.log(res.data.value.joke)
-   });
+  //    console.log(res.data.value)
+  //    console.log(res.data.value.joke)
+  //  });
 
    
  }
@@ -44,11 +44,33 @@ class App extends Component {
    console.log('hello from COMPONENT WILL UNMOUNT')
  }
 
- handleClick = () => {
-  this.setState({
-        counter: this.state.jokeTime
-      })
-    }
+//  getNext = (ev) =>{
+//   ev.preventDefault()
+//   axios.get('http://api.icndb.com/jokes/random?escape=javascript')
+// }
+
+getJoke = () => {
+  axios({
+    method: 'get',
+    url: 'http://api.icndb.com/jokes/random?escape=javascript',
+    responseType: 'json'
+  }).then((res) => {
+    console.log (res)
+
+    this.setState({
+      jokeArray: res.data.value,
+      jokeTime: res.data.value.joke
+     //  jokeName: res.dajokeObjects[0].title
+    });
+  })
+}
+
+ handleClick = (ev) => {
+
+  ev.preventDefault()
+
+}
+
 
 
  render(){
@@ -57,10 +79,14 @@ class App extends Component {
    <div className="App">
      <h1>Chuckin' Norris</h1>
      <p>test test</p>
-     <button onClick={this.handleClick}></button>
-
+     <p>{this.state.jokeTime}</p>
+     <button onClick={this.getJoke}></button>
+     
    </div>
   );
+  console.log(this.handleClick)
  }
 }
+
+
 export default App;
