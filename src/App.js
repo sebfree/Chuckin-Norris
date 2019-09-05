@@ -15,25 +15,7 @@ class App extends Component {
  }
  componentDidMount(){
    console.log('Hello from COMPONENT DID MOUNT');
-   //making an API call with axios
-  //  axios({
-  //    method: 'get',
-  //    url: 'http://api.icndb.com/jokes/random?escape=javascript',
-  //    responseType: 'json'
-  //  }).then((res) => {
-  //    console.log (res)
-
-  //    this.setState({
-  //      jokeArray: res.data.value,
-  //      jokeTime: res.data.value.joke
-
-
-  //     //  jokeName: res.dajokeObjects[0].title
-  //    });
-
-  //    console.log(res.data.value)
-  //    console.log(res.data.value.joke)
-  //  });
+   document.addEventListener('mousedown', this.handleClickOutside);
 
    
  }
@@ -44,12 +26,8 @@ class App extends Component {
    console.log('hello from COMPONENT WILL UNMOUNT')
  }
 
-//  getNext = (ev) =>{
-//   ev.preventDefault()
-//   axios.get('http://api.icndb.com/jokes/random?escape=javascript')
-// }
 
-getJoke = () => {
+getJoke = (e) => {
   axios({
     method: 'get',
     url: 'http://api.icndb.com/jokes/random?escape=javascript',
@@ -63,6 +41,11 @@ getJoke = () => {
      //  jokeName: res.dajokeObjects[0].title
     });
   })
+  e.stopPropagation()
+}
+
+handleBodyClick = () => {
+  alert('`no bad bad')
 }
 
  handleClick = (ev) => {
@@ -71,21 +54,19 @@ getJoke = () => {
 
 }
 
-
-
  render(){
    console.log('Hello from the RENDER method');
  return (
-   <div className="App">
+   <div className="App" onClick={this.handleBodyClick}>
      <h1>Chuckin'Norris</h1>
      <p>test test</p>
      <p>{this.state.jokeTime}</p>
      <button onClick={this.getJoke}></button>
+
      <p>change test</p>
      
    </div>
   );
-  console.log(this.handleClick)
  }
 }
 
