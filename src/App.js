@@ -7,10 +7,9 @@ import axios from 'axios';
 class App extends Component {
 
  constructor(){
-   console.log("Healllo from Constructor");
+   console.log("Halllo from Constructor");
    super();
    this.state = {
-     counter : 0,
      jokeArray: [],
    }
  }
@@ -19,21 +18,24 @@ class App extends Component {
    //making an API call with axios
    axios({
      method: 'get',
-     url: 'http://api.icndb.com/jokes/random',
-     responseType: 'json',
-     params: {
-       key:'',
-       q: '',
-       format: 'json',
-       imgonly: 'true',
-     }
+     url: 'http://api.icndb.com/jokes/random?escape=javascript',
+     responseType: 'json'
    }).then((res) => {
-     console.log(res.data.jokeObjects);
+     console.log (res)
+
      this.setState({
-       artArray: res.data.jokeObjects,
-       artName: res.data.jokeObjects[0].title
+       jokeArray: res.data.value,
+       jokeTime: res.data.value.joke
+
+
+      //  jokeName: res.dajokeObjects[0].title
      });
+
+     console.log(res.data.value)
+     console.log(res.data.value.joke)
    });
+
+   
  }
  componentDidUpdate(){
    console.log('hello from DID UPDATE')
@@ -41,14 +43,21 @@ class App extends Component {
  componentWillUnmount(){
    console.log('hello from COMPONENT WILL UNMOUNT')
  }
- 
+
+ handleClick = () => {
+  this.setState({
+        counter: this.state.jokeTime
+      })
+    }
+
+
  render(){
    console.log('Hello from the RENDER method');
  return (
    <div className="App">
      <h1>Chuckin' Norris</h1>
      <p>test test</p>
-
+     <button onClick={this.handleClick}></button>
 
    </div>
   );
