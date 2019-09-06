@@ -67,7 +67,7 @@ const dbRef = firebase.database().ref();
 getJoke = (e) => {
   axios({
     method: 'get',
-    url: 'http://api.icndb.com/jokes/random/escape=javascript/exclude=[explicit]',
+    url: 'http://api.icndb.com/jokes/random/?escape=javascript/exclude=[explicit]',
     responseType: 'json'
   }).then((res) => {
     console.log (res)
@@ -82,9 +82,9 @@ getJoke = (e) => {
 
 }
 
-// handleBodyClick = () => {
-//   alert('`no bad bad')
-// }
+handleBodyClick = () => {
+  alert('`no bad bad')
+}
 
 handleChange = (event) => {
   this.setState({
@@ -117,7 +117,7 @@ handleSubmit = (event) => {
      <h1>Chuckin'Norris</h1>
 
      <p>{this.state.jokeTime}</p>
-     <button onClick={this.getJoke}></button>
+     <button onClick={this.getJoke}>Get a Chuckin'joke</button>
 
      <form action="">
         {/* <input onChange={this.handleChange} type="text" value={this.state.userInput}/> */}
