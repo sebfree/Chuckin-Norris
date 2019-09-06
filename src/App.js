@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+// import ReactHoldButton from 'react-long-press';
 //importing css file
 import './App.css';
 //importing axios from the node modules (in order to make API call)
 import axios from 'axios';
-import { loadOptions } from '@babel/core';
 
-// added this
+import Giphy from './Assets/tenor.gif';
+
 
 class App extends Component {
 
@@ -17,6 +18,25 @@ class App extends Component {
    }
  }
 
+// STARTS HERE 
+
+onMouseDown = () => {
+  setTimeout(() => {
+    console.log('sup')
+    
+  }, 300);
+
+};
+
+onMouseOut = () => {
+
+};
+
+
+
+
+
+// ENDS HERE
  componentDidMount(){
    console.log('Hello from COMPONENT DID MOUNT');
    
@@ -31,7 +51,7 @@ class App extends Component {
 getJoke = (e) => {
   axios({
     method: 'get',
-    url: 'http://api.icndb.com/jokes/random/10?escape=javascript',
+    url: 'http://api.icndb.com/jokes/random/escape=javascript/exclude=[explicit]',
     responseType: 'json'
   }).then((res) => {
     console.log (res)
@@ -40,17 +60,20 @@ getJoke = (e) => {
       jokeArray: res.data.value,
       jokeTime: res.data.value.joke
 
-    }, () => {
-      this.roundhouseJokes()
+    // }, () => {
+    //   this.roundhouseJokes()
     });
   })
   e.stopPropagation()
 
 }
 
-roundhouseName = () => {
-  // mapping here or looping
-}
+// roundhouseJokes = () => {
+//   for (let key in this.jokeArray) {
+//     const randomJoke = Math.floor(Math.random() * this.jokeArray.length);
+//     return jokeArray[randomJoke];
+//   }
+// }
 
 handleBodyClick = () => {
   alert('`no bad bad')
@@ -66,14 +89,14 @@ handleBodyClick = () => {
    console.log('Hello from the RENDER method');
  return (
 
-  
+  // <div>{myValue.replace(/ /g, "\u00a0")}</div>
    <div className="App" onClick={this.handleBodyClick}>
+     
+     <img src={Giphy}></img>
      <h1>Chuckin'Norris</h1>
      <p>test test</p>
      <p>{this.state.jokeTime}</p>
      <button onClick={this.getJoke}></button>
-
-     <p>{this.state.roundhouseName}</p>
 
      {/* <button onClick={this.getManyJokes}></button> */}
 
