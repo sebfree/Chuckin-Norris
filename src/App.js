@@ -7,6 +7,8 @@ import axios from 'axios';
 
 import Giphy from './Assets/tenor.gif';
 
+import firebase from './firebase.js';
+
 
 class App extends Component {
 
