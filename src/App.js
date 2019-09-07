@@ -5,6 +5,7 @@ import './App.css';
 import axios from 'axios';
 
 import Giphy from './Assets/tenor.gif';
+import Denim from './Assets/Denim.jpg';
 
 import firebase from './firebase.js';
 
@@ -110,30 +111,52 @@ handleSubmit = (event) => {
  return (
 
   // <div>{myValue.replace(/ /g, "\u00a0")}</div>
-   <div className="wrapper" onClick={this.handleBodyClick}>
+   <body onClick={this.handleBodyClick} >
+     {/* <img src={Denim}></img> */}
+     <div className="wrapper">
      
-     <img src={Giphy}></img>
-     <h1>Chuckin'Norris</h1>
+      <div className="header-flex">
+        <div className="header-image">
+          <img src={Giphy}></img>
+        </div>
+        <div className="header-text">
+          <h1>Chuckin'Norris</h1>
+        </div>
+          
+      </div>
+      
 
-     <p>{this.state.jokeTime}</p>
-     <button onClick={this.getJoke}>Get a Chuckin'joke</button>
+        <div className="jokes">
 
-     <form action="">
-        {/* <input onChange={this.handleChange} type="text" value={this.state.userInput}/> */}
-        <button onClick={this.handleSubmit}>Add to fave jokes</button>
-    </form>
-      <ul>
-        {this.state.jokes.map(joke => {
-          return (
-            <li key = {joke.uniqueKey}>
-              <p>{joke.title}</p>
-            </li>
-          ); 
-        })}
-      </ul>
+            <div className="jokes-api">
+              <p class="nes-container is-rounded">{this.state.jokeTime}</p>
+            </div>
 
+          <div className="jokes-button">
+            <button type="button" class="nes-btn is-warning"onClick={this.getJoke}>Get a Chuckin'joke</button>
+          </div>
+        </div>
 
-   </div>
+        <div className="board">
+          <form action="">
+              {/* <input onChange={this.handleChange} type="text" value={this.state.userInput}/> */}
+              <button type="button" class="nes-btn is-warning"onClick={this.handleSubmit}>Add to fave jokes</button>
+          </form>
+            <div className="lists">
+              <ul class="nes-list is-circle">
+                {this.state.jokes.map(joke => {
+                  return (
+                    <li key = {joke.uniqueKey}>
+                      <p>{joke.title}</p>
+                    </li>
+                  ); 
+                })}
+              </ul>
+            </div>
+        </div>
+      </div>
+
+   </body>
 
 
    

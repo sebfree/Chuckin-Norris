@@ -15,6 +15,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 @import url('https://fonts.googleapis.com/css?family=Lobster|Press+Start+2P&display=swap');
 
+/* NES STYLEZ */
+@import url("https://unpkg.com/nes.css/css/nes.css"); 
+
 /* GENERAL */
 
 .wrapper {
@@ -31,24 +34,49 @@ html {
 
 
 button {
-  width: 200px;
-  height: 200px;
+  width: 20%;
+  height: 20%;
+  font-size: 0.3rem;
+
 }
 
 img {
-  width: 200px;
+  /* width: 200px; */
   height: 200px;
   display: block;
+  border-radius: 50px;
+  color:rebeccapurple; 
 
 }
 
 * {
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.5rem;
+
+}
+
+ p {
+  font-size: 0.3rem;
+  color: white;
+  /* background: rebeccapurple; */
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
-  font-size: 1.9rem;
+  /* font-family: 'Lobster', cursive; */
+  font-size: 1.6rem;
 
+}
+
+.header-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.header-image .header-text {
+  width: 50%;
+  margin: 0;
+  
+}
+
+body {
+  background: linear-gradient(#ff073a, #ffff00);
 }
