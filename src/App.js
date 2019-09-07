@@ -5,7 +5,7 @@ import './App.css';
 import axios from 'axios';
 
 import Giphy from './Assets/tenor.gif';
-import Denim from './Assets/Denim.jpg';
+
 
 import firebase from './firebase.js';
 
@@ -82,9 +82,9 @@ getJoke = (e) => {
 
 }
 
-handleBodyClick = () => {
-  alert('`no bad bad')
-}
+// handleBodyClick = () => {
+//   alert('`no bad bad')
+// }
 
 handleChange = (event) => {
   this.setState({
@@ -121,6 +121,7 @@ handleSubmit = (event) => {
         </div>
         <div className="header-text">
           <h1>Chuckin'Norris</h1>
+          <blockquote><h2 className="quotation">Cuz Chuck Norris is the world's greatest human</h2></blockquote>
         </div>
           
       </div>
@@ -129,21 +130,21 @@ handleSubmit = (event) => {
         <div className="jokes">
 
             <div className="jokes-api">
-              <p class="nes-container is-rounded">{this.state.jokeTime}</p>
+              <p className="nes-container is-rounded">{this.state.jokeTime}</p>
             </div>
 
           <div className="jokes-button">
-            <button type="button" class="nes-btn is-warning"onClick={this.getJoke}>Get a Chuckin'joke</button>
+            <button type="button" className="nes-btn is-warning"onClick={this.getJoke}>Get a Chuckin'joke</button>
           </div>
         </div>
 
         <div className="board">
-          <form action="">
-              {/* <input onChange={this.handleChange} type="text" value={this.state.userInput}/> */}
-              <button type="button" class="nes-btn is-warning"onClick={this.handleSubmit}>Add to fave jokes</button>
-          </form>
-            <div className="lists">
-              <ul class="nes-list is-circle">
+          <div className="board-button">
+            <button type="button" className="nes-btn is-warning"onClick={this.handleSubmit}>Add joke to board</button>
+          </div>
+          <div className="nes-container is-rounded board-container">
+            <h2>Community Faves</h2>
+              <ul className="nes-list is-circle">
                 {this.state.jokes.map(joke => {
                   return (
                     <li key = {joke.uniqueKey}>
@@ -152,8 +153,9 @@ handleSubmit = (event) => {
                   ); 
                 })}
               </ul>
-            </div>
+          </div>
         </div>
+
       </div>
 
    </body>

@@ -13,8 +13,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
-@import url('https://fonts.googleapis.com/css?family=Lobster|Press+Start+2P&display=swap');
-
 /* NES STYLEZ */
 @import url("https://unpkg.com/nes.css/css/nes.css"); 
 
@@ -25,17 +23,14 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   margin: 0 auto;
 }
 
-html {
-  font-size: calc(2vw + 10px);
-  line-height: 1.5;
-  margin: 0;
 
+
+body {
+  background: linear-gradient(#ff073a, #ffff00);
 }
 
 
 button {
-  width: 20%;
-  height: 20%;
   font-size: 0.3rem;
 
 }
@@ -45,18 +40,30 @@ img {
   height: 200px;
   display: block;
   border-radius: 50px;
-  color:rebeccapurple; 
+  box-shadow: 0 0 2px 2px black; 
 
 }
 
-* {
+/* FONTS */
+
+
+html {
   font-family: 'Press Start 2P', cursive;
+  font-size: calc(2vw + 10px);
+  line-height: 1.5;
+  margin: 0;
 
 }
+
+h2 {
+  font-size: 0.4rem;
+}
+
+
 
  p {
   font-size: 0.3rem;
-  color: white;
+  /* color: white; */
   /* background: rebeccapurple; */
 }
 
@@ -66,9 +73,12 @@ h1 {
 
 }
 
+/* HEADER FLEX */
+
 .header-flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding-top: 40px;
 }
 
 .header-image .header-text {
@@ -77,6 +87,55 @@ h1 {
   
 }
 
-body {
-  background: linear-gradient(#ff073a, #ffff00);
+.header-text {
+  text-align: center;
 }
+
+/* BLOCKQUOTES */
+
+
+
+/* JOKE BOX AND BUTTON FLEX */
+
+.jokes {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  padding-top: 40px;
+
+}
+
+.jokes-button {
+  width: 15%;
+  margin: auto;
+}
+
+.jokes-api {
+  width: 75%;
+  margin: 0;
+}
+
+/* BOARD FLEX */
+
+.board {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+
+.board-button {
+  width: 15%;
+  margin: auto;
+}
+
+.board-container {
+  width: 75%;
+  margin: 0;
+  /* text-align: center; */
+}
+
+.board-container h2 {
+  text-align: center;
+}
+
