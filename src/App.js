@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 //importing axios from the node modules (in order to make API call)
 import axios from 'axios';
+import He from 'he';
 
 import Giphy from './Assets/tenor.gif';
 
@@ -67,7 +68,7 @@ const dbRef = firebase.database().ref();
 getJoke = (e) => {
   axios({
     method: 'get',
-    url: 'http://api.icndb.com/jokes/random/?escape=javascript/exclude=[explicit]',
+    url: 'http://api.icndb.com/jokes/random/exclude=[explicit]/?escape=javascript',
     responseType: 'json'
   }).then((res) => {
     console.log (res)
@@ -77,6 +78,7 @@ getJoke = (e) => {
       jokeTime: res.data.value.joke
 
     });
+    // decodeURI()
   })
   e.stopPropagation()
 
@@ -143,7 +145,7 @@ handleSubmit = (event) => {
             <button type="button" className="nes-btn is-warning"onClick={this.handleSubmit}>Add joke to board</button>
           </div>
           <div className="nes-container is-rounded board-container">
-            <h2>Community Faves</h2>
+            <h2>Community Board : A list of favourite jokes</h2>
               <ul className="nes-list is-circle">
                 {this.state.jokes.map(joke => {
                   return (
