@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ReactHoldButton from 'react-long-press';
 //importing css file
 import './App.css';
 //importing axios from the node modules (in order to make API call)
@@ -58,10 +57,10 @@ const dbRef = firebase.database().ref();
    
    
  componentDidUpdate(){
-   console.log('hello from DID UPDATE')
+
  }
  componentWillUnmount(){
-   console.log('hello from COMPONENT WILL UNMOUNT')
+
  }
 
 getJoke = (e) => {
@@ -107,11 +106,11 @@ handleSubmit = (event) => {
 };
 
  render(){
-   console.log('Hello from the RENDER method');
+
  return (
 
   // <div>{myValue.replace(/ /g, "\u00a0")}</div>
-   <div className="App" onClick={this.handleBodyClick}>
+   <div className="wrapper" onClick={this.handleBodyClick}>
      
      <img src={Giphy}></img>
      <h1>Chuckin'Norris</h1>
