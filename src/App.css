@@ -21,14 +21,14 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .wrapper {
   width: 90%;
   margin: 0 auto;
-  /* height: 100vh;; */
 }
 
 
 
 body {
   background: linear-gradient(#ff073a, #ffff00);
-  /* height: 100vh; */
+  height: 100vh;
+  /* padding-bottom: 20px; */
 }
 
 
@@ -61,16 +61,12 @@ h2 {
   font-size: 0.4rem;
 }
 
-
-
  p {
   font-size: 0.3rem;
   /* color: white; */
-  /* background: rebeccapurple; */
 }
 
 h1 {
-  /* font-family: 'Lobster', cursive; */
   font-size: 1.6rem;
 
 }
@@ -131,10 +127,22 @@ h1 {
   margin: auto;
 }
 
+div.nes-container.is-rounded.board-container {
+  padding: 20px;
+}
+
 .board-container {
   width: 75%;
-  margin: 0;
+  /* padding: 0; */
+  /* margin: 0; */
+  /* padding-bottom: 0; */
+  /* height: 40vh; */
   /* text-align: center; */
+}
+
+.board-container p {
+  margin: 5px;
+  /* padding-bottom: 10px; */
 }
 
 .board-container h2 {
@@ -143,13 +151,13 @@ h1 {
 
 /* FOOTER */
 footer {
-  position: relative;
-  /* background: #ff073a; */
-  left: 0;
-  bottom: 0;
+  /* position: fixed; */
+  /* left: 0; */
+  /* bottom: 0;  */
   width: 100%;
+  /* margin-top: 40px; */
   padding-top: 40px;
-  /* padding-bottom: 20px; */
+   /* background: #ffff00; */
 
 }
 

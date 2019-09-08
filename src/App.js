@@ -105,6 +105,9 @@ handleChange = (event) => {
   })
 
 }
+sendAlert = () => {
+    alert('bla');
+  }
 
 handleSubmit = (event) => {
 
@@ -122,11 +125,6 @@ handleSubmit = (event) => {
   });
 
   // TRYING TO SEND ALERT
-  // sendAlert = () => {
-  // if (this.state.jokeSubmitted === true) {
-  //   alert('bla');
-  //   }
-  // }
 
   event.stopPropagation()
 };
@@ -168,7 +166,7 @@ handleSubmit = (event) => {
 
         <div className="board">
           <div className="board-button">
-            <button disabled={this.state.jokeSubmitted} type="button" className="nes-btn is-warning"onClick={this.handleSubmit}>Add joke to board</button>
+            <button type="button" className="nes-btn is-warning"onClick={this.state.jokeSubmitted ? this.sendAlert : this.handleSubmit}>Add joke to board</button>
 
           </div>
           <div className="nes-container is-rounded board-container">
