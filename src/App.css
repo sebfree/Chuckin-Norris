@@ -21,12 +21,14 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .wrapper {
   width: 90%;
   margin: 0 auto;
+  /* height: 100vh;; */
 }
 
 
 
 body {
   background: linear-gradient(#ff073a, #ffff00);
+  /* height: 100vh; */
 }
 
 
@@ -139,3 +141,22 @@ h1 {
   text-align: center;
 }
 
+/* FOOTER */
+footer {
+  position: relative;
+  /* background: #ff073a; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 40px;
+  /* padding-bottom: 20px; */
+
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.4rem;
+  /* background: #ffff00; */
+  padding: 5px;
+  margin: 0;
+}

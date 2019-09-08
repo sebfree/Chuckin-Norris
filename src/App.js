@@ -19,7 +19,8 @@ class App extends Component {
    this.state = {
      jokeArray: [],
      jokes: [],
-     userInput: ''
+     userInput: '',
+     jokeSubmitted: false
    }
  }
 
@@ -30,7 +31,7 @@ handleChange = (event) => {
   // equal to whatever is currently the value of the input field
   this.setState({userInput: event.target.value})
 }
- componentDidMount(){
+componentDidMount(){
 
 // stores what database looks like
 const dbRef = firebase.database().ref();
@@ -55,6 +56,15 @@ const dbRef = firebase.database().ref();
     });
   });
 
+
+
+}
+
+removeJoke = (jokeId) => {
+  const dbRef = firebase.database().ref();
+
+  dbRef.child(jokeId).remove();
+
 }
    
    
@@ -78,7 +88,7 @@ getJoke = (e) => {
       jokeTime: res.data.value.joke
 
     });
-    // decodeURI()
+
   })
   e.stopPropagation()
 
@@ -88,6 +98,7 @@ getJoke = (e) => {
 //   alert('`no bad bad')
 // }
 
+
 handleChange = (event) => {
   this.setState({
     userInput: event.target.value,
@@ -96,6 +107,7 @@ handleChange = (event) => {
 }
 
 handleSubmit = (event) => {
+
   event.preventDefault();
 
   const dbRef = firebase.database().ref();
@@ -104,17 +116,31 @@ handleSubmit = (event) => {
 
   this.setState({
     userInput: '',
+    jokeSubmitted: true
+
+    
   });
+
+  // TRYING TO SEND ALERT
+  // sendAlert = () => {
+  // if (this.state.jokeSubmitted === true) {
+  //   alert('bla');
+  //   }
+  // }
+
   event.stopPropagation()
 };
 
  render(){
 
+  console.log(this.state.jokeTime);
+  console.log(this.state.jokeSubmitted);
+  // console.log(sendAlert());
+
  return (
 
   // <div>{myValue.replace(/ /g, "\u00a0")}</div>
    <body onClick={this.handleBodyClick} >
-     {/* <img src={Denim}></img> */}
      <div className="wrapper">
      
       <div className="header-flex">
@@ -123,7 +149,7 @@ handleSubmit = (event) => {
         </div>
         <div className="header-text">
           <h1>Chuckin'Norris</h1>
-          <blockquote><h2 className="quotation">Cuz Chuck Norris is the world's greatest human</h2></blockquote>
+          <h2 className="quotation">Cuz Chuck Norris is the world's greatest human</h2>
         </div>
           
       </div>
@@ -142,7 +168,8 @@ handleSubmit = (event) => {
 
         <div className="board">
           <div className="board-button">
-            <button type="button" className="nes-btn is-warning"onClick={this.handleSubmit}>Add joke to board</button>
+            <button disabled={this.state.jokeSubmitted} type="button" className="nes-btn is-warning"onClick={this.handleSubmit}>Add joke to board</button>
+
           </div>
           <div className="nes-container is-rounded board-container">
             <h2>Community Board : A list of favourite jokes</h2>
@@ -150,7 +177,7 @@ handleSubmit = (event) => {
                 {this.state.jokes.map(joke => {
                   return (
                     <li key = {joke.uniqueKey}>
-                      <p>{joke.title}</p>
+                      <p>{joke.title}<span><button onClick={() => this.removeJoke(joke.uniqueKey)}>Remove Joke</button></span></p>
                     </li>
                   ); 
                 })}
@@ -160,7 +187,11 @@ handleSubmit = (event) => {
 
       </div>
 
-   </body>
+      <footer>
+        <p>&copy; Seb Freeman 2019</p>
+      </footer>
+
+  </body>
 
 
    
