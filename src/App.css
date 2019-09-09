@@ -26,8 +26,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 
 body {
-  background: linear-gradient(#ff073a, #ffff00);
+  background: linear-gradient(#ff073a, #ffff00) repeat;
   height: 100vh;
+  overflow: auto;
   /* padding-bottom: 20px; */
 }
 
@@ -89,9 +90,6 @@ h1 {
   text-align: center;
 }
 
-/* BLOCKQUOTES */
-
-
 
 /* JOKE BOX AND BUTTON FLEX */
 
@@ -129,12 +127,13 @@ h1 {
 
 div.nes-container.is-rounded.board-container {
   padding: 20px;
+  /* width: 75%; */
 }
 
 .board-container {
   width: 75%;
   /* padding: 0; */
-  /* margin: 0; */
+  margin: 0;
   /* padding-bottom: 0; */
   /* height: 40vh; */
   /* text-align: center; */

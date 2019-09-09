@@ -3,41 +3,38 @@ import React, { Component } from 'react';
 import './App.css';
 //importing axios from the node modules (in order to make API call)
 import axios from 'axios';
-import He from 'he';
-
+// importing cool gif
 import Giphy from './Assets/tenor.gif';
-
-
+// importing firebase
 import firebase from './firebase.js';
 
-
+// creating parent component
 class App extends Component {
 
+  // creating constructor with states
  constructor(){
    console.log("Halllo from Constructor");
    super();
    this.state = {
      jokeArray: [],
      jokes: [],
-     userInput: '',
+    //  userInput: '',
      jokeSubmitted: false
    }
  }
 
 // this event will fire every time there is a change in the input it is attached to
-handleChange = (event) => {
+// handleChange = (event) => {
 
-  // we're telling React to update the state of our `App` component to be 
-  // equal to whatever is currently the value of the input field
-  this.setState({userInput: event.target.value})
-}
+//   this.setState({userInput: event.target.value})
+// }
 componentDidMount(){
 
 // stores what database looks like
 const dbRef = firebase.database().ref();
 // monitors stores and returns changes
   dbRef.on('value', (data) => {
-    // this only returns the books, e.g. the items
+    // this only returns the jokes, e.g. the items
    const response = data.val();
 
     const newState = [];
@@ -56,8 +53,6 @@ const dbRef = firebase.database().ref();
     });
   });
 
-
-
 }
 
 removeJoke = (jokeId) => {
@@ -75,14 +70,15 @@ removeJoke = (jokeId) => {
 
  }
 
+//  this is the API call to pull random joke
 getJoke = (e) => {
   axios({
     method: 'get',
     url: 'http://api.icndb.com/jokes/random/exclude=[explicit]/?escape=javascript',
     responseType: 'json'
   }).then((res) => {
-    console.log (res)
 
+    // setting new joke state
     this.setState({
       jokeArray: res.data.value,
       jokeTime: res.data.value.joke
@@ -94,21 +90,15 @@ getJoke = (e) => {
 
 }
 
-// handleBodyClick = () => {
-//   alert('`no bad bad')
-// }
 
 
-handleChange = (event) => {
-  this.setState({
-    userInput: event.target.value,
-  })
-
-}
+// alert function to handle errors (when user tries to add multiple jokes to board)
 sendAlert = () => {
-    alert('bla');
+    alert("You've already added a joke");
   }
 
+
+// this adds a joke to the community board / firebase
 handleSubmit = (event) => {
 
   event.preventDefault();
@@ -117,23 +107,18 @@ handleSubmit = (event) => {
 
   dbRef.push(this.state.jokeTime);
 
+  // setting state to disbable add joke to board feature
   this.setState({
-    userInput: '',
     jokeSubmitted: true
 
     
   });
 
-  // TRYING TO SEND ALERT
 
   event.stopPropagation()
 };
 
  render(){
-
-  console.log(this.state.jokeTime);
-  console.log(this.state.jokeSubmitted);
-  // console.log(sendAlert());
 
  return (
 
