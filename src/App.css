@@ -132,7 +132,7 @@ div.nes-container.is-rounded.board-container {
 .board-container {
   width: 75%;
   /* padding: 0; */
-  /* margin: 0; */
+  margin: 0;
   /* padding-bottom: 0; */
   /* height: 40vh; */
   /* text-align: center; */

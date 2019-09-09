@@ -8,6 +8,7 @@ import Giphy from './Assets/tenor.gif';
 // importing firebase
 import firebase from './firebase.js';
 
+import Footer from './footer.js';
 // creating parent component
 class App extends Component {
 
@@ -172,12 +173,9 @@ handleSubmit = (event) => {
 
       </div>
 
-      <footer>
-        <p>&copy; Seb Freeman 2019</p>
-      </footer>
-
+        <Footer />
+  
   </body>
-
 
    
   );
