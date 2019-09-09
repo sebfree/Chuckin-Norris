@@ -154,17 +154,19 @@ handleSubmit = (event) => {
             <button type="button" className="nes-btn is-warning"onClick={this.state.jokeSubmitted ? this.sendAlert : this.handleSubmit}>Add joke to board</button>
 
           </div>
-          <div className="nes-container is-rounded board-container">
-            <h2>Community Board : A list of favourite jokes</h2>
-              <ul className="nes-list is-circle">
-                {this.state.jokes.map(joke => {
-                  return (
-                    <li key = {joke.uniqueKey}>
-                      <p>{joke.title}<span><button className="nes-btn is-warning remove-button" onClick={() => this.removeJoke(joke.uniqueKey)}>Remove</button></span></p>
-                    </li>
-                  ); 
-                })}
-              </ul>
+          <div className="board-container">
+            <div className="nes-container is-rounded">
+              <h2>Community Board : A list of favourite jokes</h2>
+                <ul className="nes-list is-circle">
+                  {this.state.jokes.map(joke => {
+                    return (
+                      <li key = {joke.uniqueKey}>
+                        <p>{joke.title}<span><button className="nes-btn is-warning remove-button" onClick={() => this.removeJoke(joke.uniqueKey)}>Remove</button></span></p>
+                      </li>
+                    ); 
+                  })}
+                </ul>
+            </div>
           </div>
         </div>
 

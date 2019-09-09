@@ -21,6 +21,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .wrapper {
   width: 90%;
   margin: 0 auto;
+  border: 2px solid rebeccapurple;
 }
 
 
@@ -131,7 +132,7 @@ div.nes-container.is-rounded.board-container {
 .board-container {
   width: 75%;
   /* padding: 0; */
-  margin: 0;
+  /* margin: 0; */
   /* padding-bottom: 0; */
   /* height: 40vh; */
   /* text-align: center; */
@@ -170,6 +171,7 @@ footer p {
 
 .remove-button {
 
+  margin-left: 10px;
   /* background: linear-gradient(#ff073a, #ffff00); */
   /* background: #ff073a; */
   /* height: 20px; */
