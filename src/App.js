@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 //importing axios from the node modules (in order to make API call)
 import axios from 'axios';
-// importing cool gif
+// importing images
 import Giphy from './Assets/tenor.gif';
 // importing firebase
 import firebase from './firebase.js';
@@ -160,7 +160,7 @@ handleSubmit = (event) => {
                 {this.state.jokes.map(joke => {
                   return (
                     <li key = {joke.uniqueKey}>
-                      <p>{joke.title}<span><button onClick={() => this.removeJoke(joke.uniqueKey)}>Remove Joke</button></span></p>
+                      <p>{joke.title}<span><button className="nes-btn is-warning remove-button" onClick={() => this.removeJoke(joke.uniqueKey)}>Remove</button></span></p>
                     </li>
                   ); 
                 })}
