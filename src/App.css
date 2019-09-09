@@ -13,42 +13,174 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
-@import url('https://fonts.googleapis.com/css?family=Lobster|Press+Start+2P&display=swap');
+/* NES STYLEZ */
+@import url("https://unpkg.com/nes.css/css/nes.css"); 
 
 /* GENERAL */
 
 .wrapper {
   width: 90%;
   margin: 0 auto;
+  border: 2px solid rebeccapurple;
 }
 
+
+
+body {
+  background: linear-gradient(#ffff00, #ff073a) repeat;
+  height: 100vh;
+  overflow: auto;
+  /* padding-bottom: 20px; */
+}
+
+img {
+  /* width: 200px; */
+  height: 200px;
+  display: block;
+  border-radius: 50px;
+  box-shadow: 0 0 2px 2px black; 
+
+}
+
+.nes-container {
+  background: white;
+}
+
+/* FONTS */
+
+
 html {
+  font-family: 'Press Start 2P', cursive;
   font-size: calc(2vw + 10px);
   line-height: 1.5;
   margin: 0;
 
 }
 
-
-button {
-  width: 200px;
-  height: 200px;
+h2 {
+  font-size: 0.4rem;
 }
 
-img {
-  width: 200px;
-  height: 200px;
-  display: block;
-
-}
-
-* {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.5rem;
+ p {
+  font-size: 0.3rem;
+  /* color: white; */
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
+
+}
+
+/* HEADER FLEX */
+
+.header-flex {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+
+.header-image .header-text {
+  width: 50%;
+  margin: 0;
+  
+}
+
+.header-text {
+  text-align: center;
+}
+
+
+/* JOKE BOX AND BUTTON FLEX */
+
+.jokes {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  padding-top: 40px;
+
+}
+
+.jokes-button {
+  width: 15%;
+  margin: auto;
+}
+
+.jokes-api {
+  width: 75%;
+  margin: 0;
+}
+
+/* BOARD FLEX */
+
+.board {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+
+.board-button {
+  width: 15%;
+  margin: auto;
+}
+
+div.nes-container.is-rounded.board-container {
+  padding: 20px;
+  /* width: 75%; */
+}
+
+.board-container {
+  width: 75%;
+  /* padding: 0; */
+  margin: 0;
+  /* padding-bottom: 0; */
+  /* height: 40vh; */
+  /* text-align: center; */
+}
+
+.board-container p {
+  margin: 5px;
+  /* padding-bottom: 10px; */
+}
+
+.board-container h2 {
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  /* position: fixed; */
+  /* left: 0; */
+  /* bottom: 0;  */
+  width: 100%;
+  /* margin-top: 40px; */
+  padding-top: 40px;
+   /* background: #ffff00; */
+
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.4rem;
+  /* background: #ffff00; */
+  padding: 5px;
+  margin: 0;
+}
+
+/* buttons */
+
+.remove-button {
+
+  margin-left: 10px;
+  /* background: linear-gradient(#ff073a, #ffff00); */
+  /* background: #ff073a; */
+  /* height: 20px; */
+/*  */
+}
+
+button {
+  font-size: 0.3rem;
+  /* background: linear-gradient(#ff073a, #ffff00); */
+  /* box-shadow: 0 0 5px 5px black;  */
 
 }
