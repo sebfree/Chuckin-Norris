@@ -30,6 +30,7 @@ body {
   background: linear-gradient(#ffff00, #ff073a) repeat;
   height: 100vh;
   overflow: auto;
+  font-family: 'Press Start 2P', cursive;
   /* padding-bottom: 20px; */
 }
 
@@ -50,7 +51,6 @@ img {
 
 
 html {
-  font-family: 'Press Start 2P', cursive;
   font-size: calc(2vw + 10px);
   line-height: 1.5;
   margin: 0;
