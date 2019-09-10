@@ -75,7 +75,7 @@ removeJoke = (jokeId) => {
 getJoke = (e) => {
   axios({
     method: 'get',
-    url: 'http://api.icndb.com/jokes/random/exclude=[explicit]/?escape=javascript',
+    url: 'https://api.icndb.com/jokes/random/exclude=[explicit]/?escape=javascript',
     responseType: 'json'
   }).then((res) => {
 
