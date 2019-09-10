@@ -21,7 +21,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .wrapper {
   width: 90%;
   margin: 0 auto;
-  border: 2px solid rebeccapurple;
 }
 
 
@@ -31,11 +30,10 @@ body {
   height: 100vh;
   overflow: auto;
   font-family: 'Press Start 2P', cursive;
-  /* padding-bottom: 20px; */
+
 }
 
 img {
-  /* width: 200px; */
   height: 200px;
   display: block;
   border-radius: 50px;
@@ -94,7 +92,6 @@ h1 {
 
 .jokes {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-evenly;
   padding-top: 40px;
 
@@ -124,23 +121,15 @@ h1 {
   margin: auto;
 }
 
-div.nes-container.is-rounded.board-container {
-  padding: 20px;
-  /* width: 75%; */
-}
-
 .board-container {
   width: 75%;
-  /* padding: 0; */
   margin: 0;
-  /* padding-bottom: 0; */
-  /* height: 40vh; */
-  /* text-align: center; */
+
 }
 
 .board-container p {
   margin: 5px;
-  /* padding-bottom: 10px; */
+
 }
 
 .board-container h2 {
@@ -149,20 +138,14 @@ div.nes-container.is-rounded.board-container {
 
 /* FOOTER */
 footer {
-  /* position: fixed; */
-  /* left: 0; */
-  /* bottom: 0;  */
   width: 100%;
-  /* margin-top: 40px; */
   padding-top: 40px;
-   /* background: #ffff00; */
 
 }
 
 footer p {
   text-align: center;
   font-size: 0.4rem;
-  /* background: #ffff00; */
   padding: 5px;
   margin: 0;
 }
@@ -172,15 +155,131 @@ footer p {
 .remove-button {
 
   margin-left: 10px;
-  /* background: linear-gradient(#ff073a, #ffff00); */
-  /* background: #ff073a; */
-  /* height: 20px; */
-/*  */
+
 }
 
 button {
   font-size: 0.3rem;
-  /* background: linear-gradient(#ff073a, #ffff00); */
-  /* box-shadow: 0 0 5px 5px black;  */
+
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 975px) {
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  img {
+    height: 175px;
+  }
+
+  .jokes-button {
+    min-width: 15%;
+  }
+
+}
+
+@media (max-width: 868px) {
+
+  .jokes {
+    display: block;
+  }
+
+  .board {
+    display: block;
+  }
+
+  .jokes-api {
+    margin: auto;
+    padding-top: 20px;
+  }
+
+  .board-container {
+    margin: auto;
+    padding-top: 20px;
+  }
+
+  h2 {
+    font-size: 0.4rem;
+  }
+
+  div.jokes-button {
+    text-align: center;
+    width: auto;
+  }
+
+  div.board-button {
+    text-align: center;
+    width: auto;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  p {
+    font-size: 0.4rem;
+  }
+
+  footer p {
+    font-size: 0.5rem;
+  } 
+
+  h2 {
+    font-size: 0.5rem;
+  }
+
+  button {
+    font-size: 0.4rem;
+  }
+
+  .board-container {
+    width: 90%;
+  }
+
+  .jokes-api {
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 680px) {
+  .header-flex {
+    display: block;
+  }
+
+  .header-image {
+    padding-bottom: 40px;
+  }
+
+  img {
+    margin: auto;
+  }
+
+  div.nes-container.is-rounded.board-padding {
+    padding: 20px;
+  }
+
+  .remove-button {
+    padding: 1px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  h1 {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 0.5rem;
+  }
+
+  p {
+    font-size: 0.5rem
+  }
 
 }

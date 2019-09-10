@@ -91,8 +91,6 @@ getJoke = (e) => {
 
 }
 
-
-
 // alert function to handle errors (when user tries to add multiple jokes to board)
 sendAlert = () => {
     alert("You've already added a joke");
@@ -141,13 +139,15 @@ handleSubmit = (event) => {
 
         <div className="jokes">
 
+        <div className="jokes-button">
+            <button type="button" className="nes-btn is-warning"onClick={this.getJoke}>Get a Chuckin'joke</button>
+          </div>
+
             <div className="jokes-api">
               <p className="nes-container is-rounded">{this.state.jokeTime}</p>
             </div>
 
-          <div className="jokes-button">
-            <button type="button" className="nes-btn is-warning"onClick={this.getJoke}>Get a Chuckin'joke</button>
-          </div>
+
         </div>
 
         <div className="board">
@@ -156,7 +156,7 @@ handleSubmit = (event) => {
 
           </div>
           <div className="board-container">
-            <div className="nes-container is-rounded">
+            <div className="nes-container is-rounded board-padding">
               <h2>Community Board : A list of favourite jokes</h2>
                 <ul className="nes-list is-circle">
                   {this.state.jokes.map(joke => {
