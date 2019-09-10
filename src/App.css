@@ -61,7 +61,6 @@ h2 {
 
  p {
   font-size: 0.35rem;
-  /* color: white; */
 }
 
 h1 {
@@ -184,6 +183,8 @@ button {
 
 @media (max-width: 868px) {
 
+  /* remove flex and re-format */
+
   .jokes {
     display: block;
   }
@@ -202,9 +203,8 @@ button {
     padding-top: 20px;
   }
 
-  h2 {
-    font-size: 0.4rem;
-  }
+
+  /* center buttons */
 
   div.jokes-button {
     text-align: center;
@@ -218,6 +218,12 @@ button {
 
   ul {
     padding-left: 20px;
+  }
+
+    /* new font sizes */
+
+  h2 {
+    font-size: 0.4rem;
   }
 
   p {
@@ -247,17 +253,19 @@ button {
 }
 
 @media (max-width: 680px) {
+
+  /* remove flex to reformat */
   .header-flex {
     display: block;
   }
 
-  .header-image {
-    padding-bottom: 40px;
-  }
+  /* center image */
 
   img {
     margin: auto;
   }
+
+  /* general changes */
 
   div.nes-container.is-rounded.board-padding {
     padding: 20px;
@@ -267,9 +275,15 @@ button {
     padding: 1px;
   }
 
+  .header-image {
+    padding-bottom: 40px;
+  }
+
 }
 
 @media (max-width: 500px) {
+
+  /* adjust font-sizes */
 
   h1 {
     font-size: 1.2rem;

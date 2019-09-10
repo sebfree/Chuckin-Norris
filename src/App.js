@@ -24,11 +24,6 @@ class App extends Component {
    }
  }
 
-// this event will fire every time there is a change in the input it is attached to
-// handleChange = (event) => {
-
-//   this.setState({userInput: event.target.value})
-// }
 componentDidMount(){
 
 // stores what database looks like
@@ -38,8 +33,10 @@ const dbRef = firebase.database().ref();
     // this only returns the jokes, e.g. the items
    const response = data.val();
 
+  //  create array for new state
     const newState = [];
 
+    // loop through new state
     for (let key in response) {
       newState.push({
         title: response[key],
@@ -48,7 +45,7 @@ const dbRef = firebase.database().ref();
 
     }
 
-
+// set new joke state
     this.setState({
       jokes: newState,
     });
@@ -56,6 +53,7 @@ const dbRef = firebase.database().ref();
 
 }
 
+// function to remove joke from board
 removeJoke = (jokeId) => {
   const dbRef = firebase.database().ref();
 
@@ -87,6 +85,8 @@ getJoke = (e) => {
     });
 
   })
+
+  // avoid double event
   e.stopPropagation()
 
 }
@@ -113,7 +113,7 @@ handleSubmit = (event) => {
     
   });
 
-
+// avoid double event
   event.stopPropagation()
 };
 
@@ -121,7 +121,6 @@ handleSubmit = (event) => {
 
  return (
 
-  // <div>{myValue.replace(/ /g, "\u00a0")}</div>
    <body onClick={this.handleBodyClick} >
      <div className="wrapper">
      
