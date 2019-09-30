@@ -61,13 +61,6 @@ removeJoke = (jokeId) => {
 
 }
    
-   
- componentDidUpdate(){
-
- }
- componentWillUnmount(){
-
- }
 
 //  this is the API call to pull random joke
 getJoke = (e) => {
@@ -126,7 +119,7 @@ handleSubmit = (event) => {
      
       <div className="header-flex">
         <div className="header-image">
-          <img src={Giphy}></img>
+          <img src={Giphy} alt="anomated gif of Chuck Norris delivering a series of roundhouse kicks"></img>
         </div>
         <div className="header-text">
           <h1>Chuckin'Norris</h1>
